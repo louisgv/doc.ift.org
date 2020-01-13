@@ -1,34 +1,27 @@
+const themeOptions = require('gatsby-theme-apollo-docs/theme-options');
+
 module.exports = {
-  siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-  },
-  plugins: [
-    `gatsby-plugin-react-helmet`,
+  plugins: [  
+    `gatsby-plugin-dark-mode`,
+    `gatsby-plugin-offline`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-theme-apollo-docs',
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        ...themeOptions,
+        root: __dirname,
+        siteName: "doc.ift",
+        subtitle: "IFT Documentations",
+        description: "A guide to IFT's standards and APIs",
+        githubRepo: "louisgv/doc.ift.org",
+        sidebarCategories: {
+          null: ["index", "getting-started", "whats-new"],
+          Features: [
+            "features/mocking",
+            "features/errors",
+            "features/data-sources",
+          ],
+        },
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-      },
-    },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }
