@@ -1,17 +1,18 @@
 {
   "name": "doc.ift.org",
   "private": true,
+  "homepage": "https://louisgv.github.io/doc.ift.org",
   "description": "Documentation site for IFT.",
   "version": "0.1.0",
   "author": "Louis <lgvichy@gmail.com>",
   "dependencies": {
-    "gatsby": "^2.18.12",
-    "gatsby-plugin-dark-mode": "^1.1.0",
-    "gatsby-plugin-offline": "^3.0.31",
-    "gatsby-theme-apollo-docs": "^3.2.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "gatsby": "2.18.12",
+    "gatsby-plugin-dark-mode": "1.1.0",
+    "gatsby-plugin-offline": "3.0.31",
+    "gatsby-theme-apollo-docs": "3.2.0",
+    "prop-types": "15.7.2",
+    "react": "16.12.0",
+    "react-dom": "16.12.0"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
@@ -29,7 +30,8 @@
     "start": "npm run dev",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "deploy": "npx gh-pages -d public"
   },
   "repository": {
     "type": "git",
