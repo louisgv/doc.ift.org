@@ -3,5 +3,7 @@ const {colors : spaceKitColors} = require('@apollo/space-kit/colors');
 
 exports.colors = {
   ...colors,
-  primary: spaceKitColors.red.base,
+  primary: spaceKitColors.blue.base,
+  primaryLight: spaceKitColors.blue.light,
+  secondary: spaceKitColors.yellow.base
 }
