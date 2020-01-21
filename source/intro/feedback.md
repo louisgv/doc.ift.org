@@ -1,6 +1,6 @@
 ---
-title: The Apollo GraphQL platform
-description: How Apollo helps you go from zero to production with GraphQL
+title: Feedback and Caveats
+description: Process, known issues, caveats and feedback requested.
 ---
 
 Apollo is an implementation of GraphQL designed for the needs of product
@@ -10,7 +10,7 @@ avoid requiring any changes to existing APIs and services. Apollo puts
 particular emphasis on tooling and workflows.
 
 Apollo is best used as a new layer in your stack that sits between your
-services and your applications. It's a combination of open source
+services and your applications. It's a combination of open **source**
 components, commercial extensions, and cloud services. The major pieces
 are:
 
