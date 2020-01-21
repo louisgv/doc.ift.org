@@ -27,7 +27,7 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-613578c66be42d7d6450.js"
+    "url": "webpack-runtime-894e0f91a9956e606867.js"
   },
   {
     "url": "styles.bf21ade31bbba4a1d073.css"
@@ -39,14 +39,14 @@ self.__precacheManifest = [
     "url": "commons-487d38bec414ba5177c2.js"
   },
   {
-    "url": "app-62b28375954fa9870c33.js"
+    "url": "app-a2c76ab7264e638eebe9.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-ceef87afc058962c4db9.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "5f5e0b72d57058c7bbd0d5fd21dd3eea"
+    "revision": "16eaae9e4061f501f152200aa5bf8317"
   },
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
@@ -138,12 +138,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^`), ``)
+  pathname = pathname.replace(new RegExp(`^/doc.ift.org`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-62b28375954fa9870c33.js`))) {
+  if (!resources || !(await caches.match(`/doc.ift.org/app-a2c76ab7264e638eebe9.js`))) {
     return await fetch(event.request)
   }
 
@@ -156,7 +156,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/doc.ift.org/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })
