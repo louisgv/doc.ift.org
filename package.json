@@ -1,7 +1,7 @@
 {
   "name": "doc.ift.org",
   "private": true,
-  "homepage": "https://louisgv.github.io/doc.ift.org",
+  "homepage": "https://louisgv.github.io/doc.ift.org/",
   "description": "Documentation site for IFT.",
   "version": "0.1.0",
   "author": "Louis <lgvichy@gmail.com>",
@@ -31,7 +31,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "npx gh-pages -d public"
+    "deploy": "gatsby build --prefix-paths && npx gh-pages -d public"
   },
   "repository": {
     "type": "git",
