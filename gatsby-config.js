@@ -16,7 +16,7 @@ module.exports = {
         root: __dirname,
         githubRepo: "louisgv/doc.ift.org",
         sidebarCategories: {
-          null: ["index", "intro/feedback"],
+          null: ["index", "intro/executive-summary", "intro/feedback"],
           "Background Information": [
             "part1/1-gdst-traceability-overview",
             "part1/2-traceability-and-standards",

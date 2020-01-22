@@ -1,99 +1,239 @@
 ---
 title: 2. Traceability and the Importance of Standards for Seafood
-description: Process, known issues, caveats and feedback requested.
 ---
 
-Apollo is an implementation of GraphQL designed for the needs of product
-engineering teams building modern, data-driven applications. It
-encourages an agile, incremental approach and takes special care to
-avoid requiring any changes to existing APIs and services. Apollo puts
-particular emphasis on tooling and workflows.
+Business drivers
+----------------
 
-Apollo is best used as a new layer in your stack that sits between your
-services and your applications. It's a combination of open **source**
-components, commercial extensions, and cloud services. The major pieces
-are:
+### IUU Fishing[^8]
 
-![Graph layer](../img/platform-diagram.png)
+Illegal, unreported and unregulated (IUU) fishing is a broad term that
+captures a wide variety of fishing activity. IUU fishing is found in all
+types and dimensions of fisheries; it occurs both on the high seas and
+in areas within national jurisdiction. It concerns all aspects and
+stages of the capture and utilization of fish, and it may sometimes be
+associated with organized crime. The GDST framework including the Basic
+Universal List (BUL) is crafted to collect KDEs at CTEs to provide a
+backbone of accountability toward addressing IUU fishing.
 
-## Core open source components
+-   Illegal Fishing:
 
-- **Apollo Server** is a JavaScript GraphQL server for defining a
-  _schema_ and a set of _resolvers_ that implement each part of that
-  schema. Typically Apollo Server is extensible: plugins can hook in to each stage of the
-  request pipeline and server's own lifecycle, making it possible to
-  implement custom behaviors in add-on packages. Apollo Server supports
-  AWS Lambda and other serverless environments.
+    -   conducted by national or foreign vessels in waters under the
+        jurisdiction of a State, without the permission of that State,
+        or in contravention of its laws and regulations;
 
-- **Apollo Client** is a sophisticated GraphQL client that
-  manages data and state in an application. Among other benefits, it
-  enables a declarative programming style that lets developers define
-  queries as part of UI components; the client manages all the hairy
-  details of binding query results to the UI, managing consistency,
-  caching, and so on. Apollo Client also supports an
-  exceptionally elegant approach to state management by _extending_ the
-  GraphQL schema inside the client with additional structure. Apollo Client
-  includes integrations for React, React Native, Vue, Angular, and
-  other view layers.
+    -   conducted by vessels flying the flag of States that are parties
+        to a relevant regional fisheries management organization but
+        operate in contravention of the conservation and management
+        measures adopted by that organization and by which the States
+        are bound, or relevant provisions of the applicable
+        international law; or
 
-- **iOS and Android** clients, originally contributed by the community,
-  make it possible to query a GraphQL API from native iOS and
-  Android applications.
+    -   in violation of national laws or international obligations,
+        including those undertaken by cooperating States to a relevant
+        regional fisheries management organization.
 
-- **Apollo CLI** is a simple command line client that provides
-  access to Apollo cloud services.
+-   Unreported Fishing:
 
-## Cloud services
+    -   which have not been reported, or have been misreported, to the
+        relevant national authority, in contravention of national laws
+        and regulations; or
 
-- **Schema registry** &mdash; a registry for GraphQL schemas that acts
-  as a central source of truth for a schema, enriched with additional
-  metadata like field-level usage statistics.
+    -   are undertaken in the area of competence of a relevant regional
+        fisheries management organization which have not been reported
+        or have been misreported, in contravention of the reporting
+        procedures of that organization.
 
-- **Client registry** &mdash; a registry to track each known consumer
-  of a schema, which can include both pre-registered and ad-hoc clients.
+-   Unregulated Fishing:
 
-- **Operation registry** &mdash; a registry of all the known operations
-  against the schema, which similarly can include both pre-registered
-  and ad-hoc operations.
+    -   in the area of application of a relevant regional fisheries
+        management organization that are conducted by vessels without
+        nationality, or by those flying the flag of a State not party to
+        that organization, or by a fishing entity, in a manner that is
+        not consistent with or contravenes the conservation and
+        management measures of that organization; or
 
-- **Trace warehouse** &mdash; a data pipeline and storage layer that
-  captures structured information about each GraphQL operation
-  processed by an Apollo Server (or any other server that implements
-  the Apollo trace API), including the specific set of fields accessed,
-  the tree of resolver calls that were made with timing data for each,
-  and important metadata such as client identity and which version
-  of the schema was queried.
+    -   in areas or for fish stocks in relation to which there are no
+        applicable conservation or management measures and where such
+        fishing activities are conducted in a manner inconsistent with
+        State responsibilities for the conservation of living marine
+        resources under international law.
 
-## Gateway
+IUU fishing undermines national and regional efforts to conserve and
+manage fish stocks and, as a consequence, inhibits progress towards
+achieving the goals of long-term sustainability and responsibility.
+Moreover, IUU fishing greatly disadvantages and discriminates against
+those fishers that act responsibly, honestly and in accordance with the
+terms of their fishing authorizations. If IUU fishers target vulnerable
+stocks that are subject to strict management controls or moratoria,
+efforts to rebuild those stocks to healthy levels will not be achieved,
+threatening marine biodiversity, food security for communities who rely
+on fisheries resources for protein and the livelihoods of those involved
+in the sector.
 
-- **Apollo Gateway** &mdash; a configuration of Apollo Server and additional plugins
-  that functions as a GraphQL gateway. The gateway composes separately deployed "micro-schemas" that reference each other into a single master schema, which looks to a client just like any regular GraphQL schema. To answer queries, the gateway builds a query plan, fetches data from each upstream GraphQL service, and assembles it all back together into a single result.
+### IUU Fishing and Seafood Traceability Related Regulations \[Non-Exhaustive\]
 
-## Workflows
+### Unites States NOAA Seafood Import Monitoring Program (SIMP)[^9]
 
-On top of these components, Apollo implements some useful workflows for
-managing a GraphQL API. Each of these workflows makes use of several
-different parts of the platform, working together. Some examples are:
+#### European Commission Rules to Combat Illegal Fishing[^10]
 
-### Schema change validation
+#### Port State Measures Agreement[^11]
 
-Apollo includes a facility for checking the compatibility of a given
-schema against a set of previously-observed operations. This uses the
-trace warehouse, operation registry, and (typically) the client
-registry. As an example, an operation that references a missing field or
-an operation that doesn't pass a required argument to a field would
-cause an incompatibility error. The compatibility check runs statically,
-taking advantage of the schema's type definitions, so it doesn't require
-a running server.
+#### \[Other regulations to be added\]
 
-### Safelisting
+### Seafood Fraud, Substitution and Erroneous Identification[^12]
 
-Apollo provides an end-to-end mechanism for _safelisting_ known clients
-and queries, a recommended best practice that limits production use of a
-GraphQL API to specific pre-arranged operations. There are two parts
-here. First, the Apollo CLI extracts all the queries from a client
-codebase, computes the over-the-wire subset of the query (stripping out
-the part that references the client's local schema), and stores it in
-the operation registry. Separately, an Apollo Server plugin synchronizes
-the list of pre-registered operations to the server, which then rejects
-queries that aren't present in its local copy.
+-   Seafood Substitution:
+
+> Once fish is filleted and skinned; its species can be difficult to
+> determine. Some sellers take advantage of this and substitute a
+> low-valued species for a more expensive one (for example, passing off
+> catfish as grouper). The U.S. Food and Drug Administration conducted
+> DNA testing on fish to determine the accuracy of the market names on
+> their labels and found that fish species are correctly labeled 85
+> percent of the time.[^13] Although the "bait and switch" might be the
+> most well-known type of seafood fraud, it is not the most common.
+
+-   Seafood Short-Weighing:
+
+> Less known, but far more common, is short-weighting---when processors
+> misrepresent the weight of a seafood product through practices such as
+> overglazing, soaking, and breading. Processors will often add a layer
+> of ice or a preservative to keep a seafood product fresh, a normal and
+> legal practice. However, when a processor uses excess ice
+> (overglazing) or additives (soaking) and includes that weight with the
+> net weight of the seafood, that\'s fraud. Consumers should pay for the
+> weight of the seafood alone. Short-weighting charges consumers more
+> for less seafood.
+
+-   Mislabeling:
+
+> Sometimes other qualities of seafood are mislabeled in addition to the
+> species name---such as the country of origin---to avoid regulations
+> and fees, or even to sneak or launder illegally caught fish into the
+> supply chain. This can occur through: Transshipping---when seafood
+> products are exported through different countries to avoid duties and
+> tariffs. At-sea transfers---when illegal fishing vessels transfer
+> their catch to cargo vessels carrying legitimately caught seafood.
+> Falsifying trade documents. Mislabeling seafood and concealing
+> illegally caught fish evades inspection fees, permits, and other
+> business costs that affect the price of responsibly caught seafood.
+
+### Food Safety
+
+> Seafood may be contaminated with a number of contaminants including,
+> pathogens (i.e. bacteria, viruses, or parasites), naturally occurring
+> poisons and toxins, intentionally introduced chemicals in aquaculture
+> and unintentionally introduced chemicals absorbed from the
+> environment. In cases of contamination it is important to ascertain
+> where seafood came from, to pinpoint the source of the contamination
+> and speed the removal from the supply chain.[^14]
+
+### Sustainability Focused Certification Schemes
+
+> In an effort to assure consumers that the seafood they buy is produced
+> in a sustainable way, there are a number of certification schemes in
+> the industry that are meant to provide this assurance. Product
+> Traceability, Chain of Custody and Mass Balance (matching certified
+> quantity to quantity consumed in the marketplace or
+> disposed/repurposed along the way) are common requirements across
+> these schemes.
+
+The usage of unique identification for traceable objects
+--------------------------------------------------------
+
+> Seafood traceability is often discussed in terms of documents:
+> purchase orders, catch and landing certificates, packing lists,
+> invoices, etc. However, to meet the goal of seafood traceability one
+> should [track the actual seafood]{.underline}[^15] from catch to
+> consumption, including changes of custody along the way, processing
+> performed with input and output quantities (for mass balance) and any
+> audit, certification, testing or inspection performed.
+>
+> [Traceable object identification must be unique across the global
+> supply chain]{.underline} because the critical tracking events (CTE's)
+> that rely on them to connect will not only be shared between trading
+> partners, but potentially other actors, including regulators,
+> auditors, importers, and downstream retail customers. Unique
+> identification is possible through a few mechanisms, but for ease of
+> implementation and system design we point to three identifier types
+> (see section 6)
+>
+> CTE's also answer Who, Where, When and Why, but the thing that links
+> them together is the What -- or traceable objects (seafood).
+
+The need for interoperability and standards
+-------------------------------------------
+
+> The seafood supply chain is composed of thousands of organizations
+> worldwide. Each organization is responsible for maintaining
+> traceability records internally to meet their own business needs and
+> external requirements. Given the scope and scale of the industry, it
+> is reasonable to assume that many different software solutions will be
+> deployed to identify, capture and share critical tracking events.
+> Interoperable traceability standards lower the total cost of ownership
+> of traceability solutions, speed implementation and mitigate the
+> possibility of near-term technology obsolescence.
+
+## GS1 Standards -- base for building interoperable traceability standards and the GDST framework
+
+> The GS1 system of standards includes a globally unique numbering
+> scheme for traceable objects and locations; a series of barcodes and
+> Radio Frequency Identification (RFID) specifications for Automated
+> Identification and Data Capture (AIDC); and a number of standard
+> methods for exchanging Master Data, Transaction Data and Event
+> Data.[^16] To assist organizations and industries with traceability
+> implementation, GS1 also provides industry guidance and application
+> standards for using the suite of GS1 technical standards.[^17] One
+> challenge presented in developing an interoperable framework was
+> devising requirements which will be useable and compatible with
+> traceability of other food objects at the end of the supply chain
+> (i.e. retailers), by which opening GS1 standards for seafood
+> traceability.
+>
+> The GS1 Global Traceability Standard framework for interoperable
+> traceability systems[^18] provides a framework beginning with:
+
+-   **Core Layer** of Unique Identification and data requirements based
+    on GS1 Standards (who, what, when, where, why). For seafood we have
+    described these in three ways: common CTEs and KDEs and baseline
+    barcode support.
+
+-   **Region specific extensions**. For seafood, Unites States NOAA
+    Seafood Import Monitoring Program (SIMP), UK and EU seafood
+    regulations; and Port State Measures are considered.
+
+-   **User specific extensions**. For internal traceability, or within a
+    specific software or hardware solution provider's system it is
+    sometimes necessary to extend the standard. However, these
+    extensions are strongly discouraged where industry-wide
+    interoperability is expected.
+
+-   **Note:** The GTS framework supports hybrid implementations where
+    GS1 standards are combined with non-GS1 standards or legacy
+    solutions. This has enabled us to leverage existing systems and
+    identifiers such as URLs and QR codes which are frequently used
+    today in seafood traceability.
+
+Other Traceability Standards Consulted
+--------------------------------------
+
+-   **Sector, product or application specific extensions**. For seafood
+    we are referencing already existing GS1 industry guidance[^19] [^20]
+    [^21].
+
+-   **In addition, we consulted**
+
+    -   ISO 2205:2007 Traceability in the feed and food chain;
+
+    -   ISO 12875 Traceability of finfish products --- Specification on
+        the information to be recorded in captured finfish distribution
+        chains;
+
+    -   ISO 12877 Traceability of finfish products --- Specification on
+        the information to be recorded in farmed finfish distribution
+        chains
+
+    -   MSC Chain of Custody Standard: 2015; and
+
+    -   UN/FLUX[^22]

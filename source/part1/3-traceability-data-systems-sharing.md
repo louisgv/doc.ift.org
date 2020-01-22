@@ -1,6 +1,5 @@
 ---
-title: 2. Traceability and the Importance of Standards for Seafood
-description: Process, known issues, caveats and feedback requested.
+title: 3. Traceability and the Importance of Standards for Seafood
 ---
 
 Apollo is an implementation of GraphQL designed for the needs of product
