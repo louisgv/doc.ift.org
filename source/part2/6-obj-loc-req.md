@@ -70,7 +70,7 @@ The following are example identifiers for wild caught and farmed fish, location 
 <p>URL</p>
 <p>UUID</p>
 <p><a href="https://www.gs1.org/sites/default/files/docs/barcodes/GS1_General_Specifications.pdf#page=172">GS1 PGLN</a></p></td>
-<td><p>Identify farm or vessel legal <span class="underline">owner</span> - also known as a “party”. This can either be purchased from a local GS1 member organization or assigned by a licensed agency such as GLOBALG.A.P. In the case where this is not available, one can apply the same method as for traceable objects above and generate a URL or UUID.</p>
+<td><p>Identify farm or vessel legal <span class="underline">owner</span> - also known as a `party`. This can either be purchased from a local GS1 member organization or assigned by a licensed agency such as GLOBALG.A.P. In the case where this is not available, one can apply the same method as for traceable objects above and generate a URL or UUID.</p>
 <p>http://epcis.example.com/user/vocab/party/00300 <em>or</em></p>
 <p>urn:uuid:7af5bcbe-df79-412d-8603-e536b219bb28</p>
 <p>urn:epc:id:pgln: 0614141.00300.0</p></td>
@@ -232,7 +232,7 @@ between trading partners to assure compatibility.
 <td><strong>Processor &amp; CPG</strong></td>
 <td><p><strong>Party</strong></p>
 <p><a href="https://www.gs1.org/sites/default/files/docs/barcodes/GS1_General_Specifications.pdf#page=172">GS1 Party GLN</a></p></td>
-<td><p>Identify Processor legal <span class="underline">owner</span> - also known as a “party”. This can be purchased from a local <a href="https://www.gs1.org/contact/overview">GS1 member organization</a>. It is strongly encouraged that a GLN is used rather than a URL or UUID because a PGLN can be used to convey ownership in a globally unique way across the supply chain. This is particularly helpful for chain of custody and other IUU data quality assurance needs. Understandably, it may be the case that the vessel owner or operator may not have a GS1 identifier, so the processor may be the first link in the supply chain to collect and share traceability events.</p>
+<td><p>Identify Processor legal <span class="underline">owner</span> - also known as a `party`. This can be purchased from a local <a href="https://www.gs1.org/contact/overview">GS1 member organization</a>. It is strongly encouraged that a GLN is used rather than a URL or UUID because a PGLN can be used to convey ownership in a globally unique way across the supply chain. This is particularly helpful for chain of custody and other IUU data quality assurance needs. Understandably, it may be the case that the vessel owner or operator may not have a GS1 identifier, so the processor may be the first link in the supply chain to collect and share traceability events.</p>
 <p>urn:epc:id:pgln: 0614141.00300.0</p></td>
 </tr>
 <tr class="even">
@@ -315,7 +315,7 @@ between trading partners to assure compatibility.
   - Publish/subscribe, where one party transfers data to a data pool or
     repository, which in turn pushes the data to other parties who have
     previously expressed interest in that data by registering a
-    subscription (“selective push”).
+    subscription (`selective push`).
 
   - Broadcast, where a party publishes business data in a well-known or
     publicly-accessible place such as a World Wide Web page, where it

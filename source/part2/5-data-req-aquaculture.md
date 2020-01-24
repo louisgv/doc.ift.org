@@ -640,7 +640,7 @@ are also listed in the Basic Universal List in the appendix.
 <td>Location</td>
 <td>The geographic or business location at which the event took place.</td>
 <td><p>readPoint</p>
-<p>“geo: {lat}, {lon}” or GLN</p></td>
+<p>`geo: {lat}, {lon}` or GLN</p></td>
 <td><a href="https://www.gs1.org/sites/default/files/docs/epc/CBV-Standard-1-2-2-r-2017-10-12.pdf#page=37">Location CBV Info</a></td>
 </tr>
 <tr class="odd">
@@ -748,7 +748,7 @@ are also listed in the Basic Universal List in the appendix.
 <td>Source of broodstock</td>
 <td>Text</td>
 <td><p>Broodstock from grow-out farms or taken from the wild.</p>
-<p>“Domestic” or “Wild Sources”</p></td>
+<p>`Domestic` or `Wild Sources`</p></td>
 <td>broodstockSource</td>
 <td>GDST Extension</td>
 </tr>
@@ -762,7 +762,7 @@ are also listed in the Basic Universal List in the appendix.
 <tr class="odd">
 <td>Farming Method</td>
 <td>Code</td>
-<td>A combination of type of culture, unit, level of intensity, culture species and scale or size of exploitation as defined by the FAO. “Extensive”, “Semi-Intensive”, “Intensive”</td>
+<td>A combination of type of culture, unit, level of intensity, culture species and scale or size of exploitation as defined by the FAO. `Extensive`, `Semi-Intensive`, `Intensive`</td>
 <td>aquacultureMethod</td>
 <td><p>GDST Extension</p>
 <p><a href="http://www.fao.org/docrep/t8598e/t8598e05.htm">http://www.fao.org/docrep/t8598e/t8598e05.htm</a></p></td>

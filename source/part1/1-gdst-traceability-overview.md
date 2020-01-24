@@ -8,7 +8,7 @@ The purpose of this document is to provide the seafood industry with a
 simple, flexible, voluntary approach for capturing, storing and sharing
 seafood traceability data events. It is not intended to be a standard,
 certification scheme or regulation. For ease, we will use the word
-“framework” to mean the GDST recommended approach leveraging GS1
+`framework` to mean the GDST recommended approach leveraging GS1
 standards for interoperability.
 
 ## Scope

@@ -1,6 +1,7 @@
 ---
 title: 4. Data Requirements for Wild Caught Seafood
 ---
+
 This section overviews which data have been identified by the GDST
 membership as essential to capture with wild-caught seafood to address
 the business cases enumerated in section 1. These Key Data Elements
@@ -346,7 +347,7 @@ are also listed in the Basic Universal List in the appendix.
 <td>Location</td>
 <td>The geographic or business location at which the event took place.</td>
 <td><p>readPoint</p>
-<p>“geo: {lat}, {lon}” or GLN</p></td>
+<p>`geo: {lat}, {lon}` or GLN</p></td>
 <td><a href="https://www.gs1.org/sites/default/files/docs/epc/CBV-Standard-1-2-2-r-2017-10-12.pdf#page=37">Location CBV Info</a></td>
 </tr>
 <tr class="odd">

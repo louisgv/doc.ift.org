@@ -90,7 +90,7 @@ in the sector.
 > catfish as grouper). The U.S. Food and Drug Administration conducted
 > DNA testing on fish to determine the accuracy of the market names on
 > their labels and found that fish species are correctly labeled 85
-> percent of the time.\[13\] Although the “bait and switch” might be the
+> percent of the time.\[13\] Although the `bait and switch` might be the
 > most well-known type of seafood fraud, it is not the most common.
 
   - Seafood Short-Weighing:
@@ -140,24 +140,24 @@ in the sector.
 
 ## The usage of unique identification for traceable objects
 
-> Seafood traceability is often discussed in terms of documents:
-> purchase orders, catch and landing certificates, packing lists,
-> invoices, etc. However, to meet the goal of seafood traceability one
-> should <span class="underline">track the actual seafood</span>\[15\]
-> from catch to consumption, including changes of custody along the way,
-> processing performed with input and output quantities (for mass
-> balance) and any audit, certification, testing or inspection
-> performed.
-> 
-> <span class="underline">Traceable object identification must be unique
-> across the global supply chain</span> because the critical tracking
-> events (CTE’s) that rely on them to connect will not only be shared
-> between trading partners, but potentially other actors, including
-> regulators, auditors, importers, and downstream retail customers.
-> Unique identification is possible through a few mechanisms, but for
-> ease of implementation and system design we point to three identifier
-> types (see section 6)
-> 
+Seafood traceability is often discussed in terms of documents:
+purchase orders, catch and landing certificates, packing lists,
+invoices, etc. However, to meet the goal of seafood traceability one
+should <span class="underline">track the actual seafood</span>\[15\]
+from catch to consumption, including changes of custody along the way,
+processing performed with input and output quantities (for mass
+balance) and any audit, certification, testing or inspection
+performed.
+
+<span class="underline">Traceable object identification must be unique
+across the global supply chain</span> because the critical tracking
+events (CTE’s) that rely on them to connect will not only be shared
+between trading partners, but potentially other actors, including
+regulators, auditors, importers, and downstream retail customers.
+Unique identification is possible through a few mechanisms, but for
+ease of implementation and system design we point to three identifier
+types (see section 6)
+
 > CTE’s also answer Who, Where, When and Why, but the thing that links
 > them together is the What – or traceable objects (seafood).
 
@@ -188,9 +188,9 @@ in the sector.
 > traceability of other food objects at the end of the supply chain
 > (i.e. retailers), by which opening GS1 standards for seafood
 > traceability.
-> 
-> The GS1 Global Traceability Standard framework for interoperable
-> traceability systems\[18\] provides a framework beginning with:
+ 
+The GS1 Global Traceability Standard framework for interoperable
+traceability systems\[18\] provides a framework beginning with:
 
   - **Core Layer** of Unique Identification and data requirements based
     on GS1 Standards (who, what, when, where, why). For seafood we have
