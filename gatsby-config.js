@@ -17,24 +17,30 @@ module.exports = {
         githubRepo: "louisgv/doc.ift.org",
         sidebarCategories: {
           null: ["index", "intro/executive-summary", "intro/feedback"],
-          "Background Information": [
-            "part1/1-gdst-traceability-overview",
-            "part1/2-traceability-and-standards",
-            "part1/3-traceability-data-systems-sharing",
+          "Pretext": [
+            "pretext/why-epcis",
+            "pretext/why-extension",
+            "pretext/why-iuu",
           ],
-          "GDST Framework": [
-            "part2/4-data-req-wild-caught",
-            "part2/5-data-req-aquaculture",
-            "part2/6-obj-loc-req",
-            "part2/7-interoperability-wild-farm",
-            "part2/8-traceability-data-use-cases",
+          "Certifications": [
+            "certification/msc-asc",
+            "certification/other-cert"
           ],
-
-          "Basic Universal Lists": [
-            "part3/appendix-explanation",
-            "part3/appendix-1",
-            "part3/appendix-2",
-          ]
+          "Regulatory": [
+            "regulatory/simp-compliance",
+            "regulatory/eu-catch-cert",
+            "regulatory/non-western-regulations",
+          ],
+          "Events": [
+            "events/at-sea",
+            "events/aquaculture",
+          ],
+          "Interoperability and data sharing": [
+            "interoperability-and-data-sharing/api",
+          ],
+          "Resources": [
+            "resources/index"
+          ],
         },
       },
     },
