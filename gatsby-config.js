@@ -35,8 +35,9 @@ module.exports = {
             "events/at-sea",
             "events/aquaculture",
           ],
-          "Interoperability and data sharing": [
-            "interoperability-and-data-sharing/api",
+          "Open API": [
+            "open-api/example",
+            "open-api/swagger-api"
           ],
           "Resources": [
             "resources/index"

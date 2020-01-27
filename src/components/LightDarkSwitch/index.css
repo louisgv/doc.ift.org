@@ -39,7 +39,7 @@
 }
 
 .tgl-ios + .tgl-btn {
-  background: #2e9fe6 url(contrast.svg) no-repeat 82% center;
+  background: #2e9fe6 url(light.svg) no-repeat 82% center;
   background-size: 37%;
   border-radius: 2em;
   transition: all 0.4s ease;
@@ -50,7 +50,7 @@
   transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease;
 }
 .tgl-ios:checked + .tgl-btn {
-  background: #111a2f url(crescent-moon.svg) no-repeat 15% center;
+  background: #111a2f url(dark.svg) no-repeat 15% center;
   background-size: 32%;
 }
 .tgl-ios + .tgl-btn:after, .tgl-ios+ .tgl-btn:before {

@@ -1,5 +1,5 @@
 ---
-title: API
+title: Examples
 ---
 
 Duis voluptate nulla ut ea officia ea fugiat et ut ad qui ex cupidatat ad. Incididunt sint deserunt cupidatat exercitation fugiat irure. Cillum incididunt pariatur dolor non laboris pariatur magna id ea. Laborum quis magna eu elit ut ullamco proident laborum sunt labore elit minim dolore incididunt.
