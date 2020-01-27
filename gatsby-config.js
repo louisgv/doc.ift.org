@@ -36,8 +36,9 @@ module.exports = {
             "events/aquaculture",
           ],
           "Open API": [
-            "open-api/example",
+            "open-api/examples",
             "open-api/swagger-api"
+
           ],
           "Resources": [
             "resources/index"
