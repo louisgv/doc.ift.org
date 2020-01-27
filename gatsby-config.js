@@ -37,6 +37,7 @@ module.exports = {
           ],
           "Interoperability and data sharing": [
             "interoperability-and-data-sharing/api",
+            "interoperability-and-data-sharing/examples",
           ],
           "Resources": [
             "resources/index"
