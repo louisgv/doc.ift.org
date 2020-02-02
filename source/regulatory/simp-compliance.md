@@ -3,10 +3,16 @@ title: SIMP Compliance
 description: This page will describe the neccesary KDEs for completing a SIMP report as well as how to convert the EPCIS XML into the SIMP PGA Records.
 ---
 
+## Recommended Additonal EPCIS Attributes
+There are attributes required by SIMP that are not part of the GDST guidance. Here are recommendations on how these attributes could be recorded in EPCIS in order to meet SIMP requirements.
+
+* **IFTP Number** - This can be recorded as an additional attribute either in the Party or Location master data. The recommended CBV attribute is 
+* **Catching Country** - SIMP requires the Catching Country to be recorded. We recommend that 
+
 ## Master Data
 In order to not repeat the master data used with each example, I would like to provide the master data used in the examples below. 
 
-** Master Data **
+**Master Data**
 ```xml
 <!-- MASTER DATA -->
 <EPCISMasterData>
@@ -140,7 +146,7 @@ This documentation is not meant to serve as a guide for SIMP and is just mean to
 
 Here is the Example XML for the GDST EPCIS data. This event data will contain a Fishing Event, Transshipment, and Offload Event.
 
-** Fishing Event **
+**Fishing Event**
 ```xml
 <!-- FISHING EVENT -->
 <ObjectEvent>
@@ -214,7 +220,7 @@ Here is the Example XML for the GDST EPCIS data. This event data will contain a 
 </ObjectEvent>
 ```
 
-** TransShipment Event **
+**TransShipment Event**
 ```xml
 <!-- TRANSSHIPMENT EVENT -->
 <ObjectEvent>
@@ -262,7 +268,7 @@ Here is the Example XML for the GDST EPCIS data. This event data will contain a 
 </ObjectEvent>
 ```
 
-** Offload Event **
+**Offload Event**
 ```xml
 <!-- OFFLOADING EVENT -->
 <ObjectEvent>
