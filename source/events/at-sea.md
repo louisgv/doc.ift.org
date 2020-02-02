@@ -3,6 +3,8 @@ title: Wild Harvest Events
 description: This page covers the different scenarios around harvesting products from the wild and how those different scenarios are transcribed into GDST EPCIS events.
 ---
 
+*We are not going to cover any Aggregated Wild Harvest or Aggregated Fishing Event scenarios here. We will assume that each individual Fishing Event will be recorded. This is because GDST does not support Aggregated fishing Events and we will only cover scenarios that are GDST compliant in this documentation.*
+
 ## Master Data
 Here is the Master Data that will be used in the scenarios listed below.
 
@@ -22,7 +24,19 @@ Here is the Master Data that will be used in the scenarios listed below.
                     <attribute id="urn:epcglobal:cbv:mda#descriptionShort">Yellowfin Tuna</attribute>
                     <attribute id="urn:epcglobal:cbv:mda#speciesForFisheryStatisticsPurposesName">Thunnus albacares</attribute>
                     <attribute id="urn:epcglobal:cbv:mda#speciesForFisheryStatisticsPurposesCode">YFT</attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#radeItemConditionCode">WHL</attribute>
                 </VocabularyElement>
+
+                <!-- YELLOW FIN TUNA FILLET -->
+                <VocabularyElement id="urn:gdst:traceability-solution.com:product:class:0b4e59bb-29ba-4edd-8e51-7e8d1a96dce7.YFT-FILLET">
+                    <attribute id="urn:epcglobal:cbv:mda#informationProvider">urn:gdst:traceability-solution.com:party:0048000.000001</attribute>
+                    <attribute id="urn:epcglobal:cbv:owning_party">urn:gdst:traceability-solution.com:party:0048000.000001</attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#descriptionShort">Yellowfin Tuna Fillet</attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#speciesForFisheryStatisticsPurposesName">Thunnus albacares</attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#speciesForFisheryStatisticsPurposesCode">YFT</attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#radeItemConditionCode">FIL</attribute>
+                </VocabularyElement>
+
             </VocabularyElementList>
         </Vocabulary>
 
@@ -43,9 +57,10 @@ Here is the Master Data that will be used in the scenarios listed below.
                     <attribute id="unr:epcglobal:cbv:mda#contact"/>
                     <attribute id="urn:epcglobal:cbv:mda#telephone"/>
                     <attribute id="urn:epcglobal:cbv:mda#email"/>
+                    <attribute id="urn:gdst:iftp">1234567890</attribute>
                 </VocabularyElement>
 
-                <!-- Jimmy's Tender Co. -->
+                <!-- Jimmy's Processings Co. -->
                 <VocabularyElement id="urn:gdst:traceability-solution.com:party:0048000.000001">
                     <attribute id="urn:epcglobal:cbv:mda#informationProvider">urn:gdst:traceability-solution.com:party:0048000.000001</attribute>
                     <attribute id="urn:epcglobal:cbv:mda#name">Jimmy's Tender Co.</attribute>
@@ -77,13 +92,44 @@ Here is the Master Data that will be used in the scenarios listed below.
                 </VocabularyElement>
 
                 <!-- Jimmy's Tender Vessel -->
-                <VocabularyElement id="urn:gdst:traceability-solution.com:location:loc:0b4e59bb-29ba-4edd-8e51-7e8d1a96dce7.47797660-9355-4f8c-8867-c98ee1e8b684">
+                <VocabularyElement id="urn:gdst:traceability-solution.com:location:loc:0048000.JimmysTender001">
                     <attribute id="urn:epcglobal:cbv:mda#informationProvider">urn:gdst:traceability-solution.com:party:0048000.000001</attribute>
                     <attribute id="urn:epcglobal:cbv:owning_party">urn:gdst:traceability-solution.com:party:0048000.000001</attribute>
                     <attribute id="urn:epcglobal:cbv:mda#name">Jimmy's Tender Vessel</attribute>
                     <attribute id="urn:epcglobal:cbv:mda#vesselName">Jimmy's Tender Vessel</attribute>
                     <attribute id="urn:epcglobal:cbv:mda#vesselID">IMO.1234567</attribute>
                     <attribute id="urn:epcglobal:cbv:mda#vesselFlagState">US</attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#streetAddressOne">3165 Pacific Hwy</attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#streetAddressTwo"></attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#city">San Diego</attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#state">CA</attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#postalCode">92101</attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#countryCode">US</attribute>
+                    <attribute id="unr:epcglobal:cbv:mda#contact">Joe Smith</attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#telephone">+1.999-999-9999</attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#email">joe@triunionsf.com</attribute>
+                </VocabularyElement>
+
+                <!-- PORT OF San Diego (Owned By: Jimmy's Processings Co.) -->
+                <VocabularyElement id="urn:gdst:traceability-solution.com:location:loc:0048000.SDPORT">
+                    <attribute id="urn:epcglobal:cbv:mda#informationProvider">urn:gdst:traceability-solution.com:party:0048000.000001</attribute>
+                    <attribute id="urn:epcglobal:cbv:owning_party">urn:gdst:traceability-solution.com:party:0048000.000001</attribute>
+
+                    <!-- Philip: I don't know what the port code is for the San Diego port and couldn't find it online -->
+                    <attribute id="urn:epcglobal:cbv:mda#unloadingPort">SDPORT</attribute>
+
+                    <attribute id="urn:epcglobal:cbv:mda#name">Port of San Diego</attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#streetAddressOne">3165 Pacific Hwy</attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#streetAddressTwo"></attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#city">San Diego</attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#state">CA</attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#postalCode">92101</attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#countryCode">US</attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#latitude">32.7355</attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#longitude">-117.1772</attribute>
+                    <attribute id="unr:epcglobal:cbv:mda#contact">Joe Smith</attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#telephone">+1.999-999-9999</attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#email">joe@triunionsf.com</attribute>
                 </VocabularyElement>
         </Vocabulary>
     </VocabularyList>
@@ -91,7 +137,9 @@ Here is the Master Data that will be used in the scenarios listed below.
 ```
 
 ## Fishing Events
-Fishing Events are used to record when products are harvested from the wild. There are different scenarios that can occur. Each time a vessel harvests products from the water, a fishing event should be recorded. However, it's possible for a vessel to record a single Fishing Event for their entire fishing trip while at sea.
+Fishing Events are used to record when products are harvested from the wild. There are different scenarios that can occur. Each time a vessel harvests products from the water, a fishing event should be recorded. However, it's possible for a vessel to record a single Fishing Event for their entire fishing trip while at sea. 
+
+*For events after the Fishing Event, we will be building upon the scenario of Mulitple Harvests and Multiple Fishing Events.*
 
 ### Vessel Multiple Harvests wan Single Fishing Event
 This covers when a single large vessel harvested products from multiple locations while on their fishing trip but only wants to record a single fishing event. In this case, we cannot record a single latitude / longitude for the fishing event, and will just list out all the products captured. in this case we won't record a read point, and will just record a catch area.
@@ -173,6 +221,7 @@ This covers when a vessel harvests products from multiple locations and will rec
 
 In this scenario a fishing vessel named **BING Ship** owned by **Bing Fishing Co.** has gone fishing in **FAO Zone 77**. It has gone trawling in multiple locations for **Tuna**. In this scenario the fishing vessel caught **10,000 Kilograms** of Tuna through out it's fishing trip trawling in 4 different locations. Each time the fishing vessel went trawling, it caught **2,500 Kilograms** at each location and recorded a Fishing Event each time with a latitude and longitude for where the trawling occured.
 
+**Fishing Event #1**
 ```xml
 <!-- FISHING EVENT -->
 <ObjectEvent>
@@ -246,6 +295,7 @@ In this scenario a fishing vessel named **BING Ship** owned by **Bing Fishing Co
 </ObjectEvent>
 ```
 
+**Fishing Event #2**
 ```xml
 <!-- FISHING EVENT -->
 <ObjectEvent>
@@ -319,6 +369,7 @@ In this scenario a fishing vessel named **BING Ship** owned by **Bing Fishing Co
 </ObjectEvent>
 ```
 
+**Fishing Event #3**
 ```xml
 <!-- FISHING EVENT -->
 <ObjectEvent>
@@ -392,6 +443,7 @@ In this scenario a fishing vessel named **BING Ship** owned by **Bing Fishing Co
 </ObjectEvent>
 ```
 
+**Fishing Event #4**
 ```xml
 <!-- FISHING EVENT -->
 <ObjectEvent>
@@ -444,7 +496,7 @@ In this scenario a fishing vessel named **BING Ship** owned by **Bing Fishing Co
             <cbvmda:harvestStartDate>2020-01-27</cbvmda:harvestStartDate>
             <cbvmda:harvestEndDate>2020-01-27</cbvmda:harvestEndDate>
 
-            <!-- CATCH CERTIFICATE (?) -->
+            <!-- CATCH CERTIFICATE -->
             <cbvmda:certificationList>
                 <cbvmda:certification>
                     <gdst:certificateType>urn:gdst:certType:catch_certificate</gdst:certificateType>
@@ -463,6 +515,88 @@ In this scenario a fishing vessel named **BING Ship** owned by **Bing Fishing Co
     <!-- Bing Fishing Co. -->
     <cbvmda:informationProvider>urn:gdst:traceability-solution.com:party:0b4e59bb-29ba-4edd-8e51-7e8d1a96dce7</cbvmda:informationProvider>
 </ObjectEvent>
+```
+
+## On-Vessel Processing (INCOMPLETE)
+Sometimes products are initially processedd on the Vessel that catches them. In this case, a Transformation event is recorded to represent this initial processing step.
+
+```xml
+<TransformationEvent>
+    <eventTime>2020-01-27T20:00:00Z</eventTime>
+    <baseExtension>
+        <eventID>6926712e-599f-4c4e-b6e9-8dd888c906bd</eventID>
+    </baseExtension>
+    <bizStep>urn:epcglobal:cbv:bizstep:commissioning</bizStep>
+    <disposition>urn:epcglobal:cbv:disp:active</disposition>
+
+    <!-- BING Fishing Vessel -->
+    <bizLocation>
+        <id>urn:epc:id:sgln:0614141.00888.0</id>
+    </bizLocation>
+
+    <!-- INPUT: Yellow Fin Tuna -->
+    <inputQuantityList>
+        <quantityElement>
+                <epcClass>urn:gdst:traceability-solution.com:product:lot:class:0b4e59bb-29ba-4edd-8e51-7e8d1a96dce7.YFT.LOT1111</epcClass>
+                <quantity>2500</quantity>
+                <uom>KGM</uom>
+            </quantityElement>
+            <quantityElement>
+                <epcClass>urn:gdst:traceability-solution.com:product:lot:class:0b4e59bb-29ba-4edd-8e51-7e8d1a96dce7.YFT.LOT2222</epcClass>
+                <quantity>2500</quantity>
+                <uom>KGM</uom>
+            </quantityElement>
+            <quantityElement>
+                <epcClass>urn:gdst:traceability-solution.com:product:lot:class:0b4e59bb-29ba-4edd-8e51-7e8d1a96dce7.YFT.LOT3333</epcClass>
+                <quantity>2500</quantity>
+                <uom>KGM</uom>
+            </quantityElement>
+            <quantityElement>
+                <epcClass>urn:gdst:traceability-solution.com:product:lot:class:0b4e59bb-29ba-4edd-8e51-7e8d1a96dce7.YFT.LOT4444</epcClass>
+                <quantity>2500</quantity>
+                <uom>KGM</uom>
+            </quantityElement>
+    </inputQuantityList>
+
+    <!-- OUTPUT: Yellow Fin Tuna Fillet -->
+    <outputQuantityList>
+        <quantityElement>
+            <epcClass>urn:gdst:traceability-solution.com:product:lot:class:0b4e59bb-29ba-4edd-8e51-7e8d1a96dce7.YFT-FILLET.LOT20203015</epcClass>
+            <quantity>5000</quantity>
+            <uom>KGM</uom>
+        </quantityElement>
+    </outputQuantityList>
+
+    <!-- LOT DATA -->
+    <extension>
+        <ilmd>
+
+            <!-- Chain of Custody Certificate -->
+            <cbvmda:certificationList>
+                <cbvmda:certification>
+                    <gdst:certificateType>urn:gdst:certType:chain_custody</gdst:certificateType>
+                    <cbvmda:certificationStandard>MSC Chain of Custody</cbvmda:certificationStandard>
+                    <cbvmda:certificationAgency>MSC</cbvmda:certificationAgency>
+                    <cbvmda:certificationValue>MSC_COC_1234567890</cbvmda:certificationValue>
+                    <cbvmda:certificationIdentification>MSC_COC_1234567890</cbvmda:certificationIdentification>
+                </cbvmda:certification>
+            </cbvmda:certificationList>
+
+            <!-- Expiration Date -->
+            <cbvmda:itemExpirationDate>2020-03-15</cbvmda:itemExpirationDate>
+
+            <!-- Product Origin -->
+            <cbvmda:countryOfOrigin>US</cbvmda:sellByDate>
+        </ilmd>
+    </extension>
+
+    <!-- Bing Fishing Co. -->
+    <gdst:productOwner>urn:gdst:traceability-solution.com:party:0b4e59bb-29ba-4edd-8e51-7e8d1a96dce7</gdst:productOwner>
+
+    <!-- Bing Fishing Co. -->
+    <cbvmda:informationProvider>urn:gdst:traceability-solution.com:party:0b4e59bb-29ba-4edd-8e51-7e8d1a96dce7</cbvmda:informationProvider>
+
+</TransformationEvent>
 ```
 
 ## Transshipment Events
@@ -487,7 +621,7 @@ Sometimes after products are harvested they are transferred to other ships befor
         <id>urn:gdst:traceability-solution.com:location:loc:0048000.019283"</id>
     </bizLocation>
 
-    <!-- The exact coordinates where the Transshipments occured. -->
+    <!-- Transshipment Location -->
     <readPoint>
         <id>geo:37.860236,-123.144697</id>
     </readPoint>
@@ -497,23 +631,8 @@ Sometimes after products are harvested they are transferred to other ships befor
         <!-- YELLOW FIN TUNA -->
         <quantityList>
             <quantityElement>
-                <epcClass>urn:gdst:traceability-solution.com:product:lot:class:0b4e59bb-29ba-4edd-8e51-7e8d1a96dce7.YFT.LOT1111</epcClass>
-                <quantity>2500</quantity>
-                <uom>KGM</uom>
-            </quantityElement>
-            <quantityElement>
-                <epcClass>urn:gdst:traceability-solution.com:product:lot:class:0b4e59bb-29ba-4edd-8e51-7e8d1a96dce7.YFT.LOT2222</epcClass>
-                <quantity>2500</quantity>
-                <uom>KGM</uom>
-            </quantityElement>
-            <quantityElement>
-                <epcClass>urn:gdst:traceability-solution.com:product:lot:class:0b4e59bb-29ba-4edd-8e51-7e8d1a96dce7.YFT.LOT3333</epcClass>
-                <quantity>2500</quantity>
-                <uom>KGM</uom>
-            </quantityElement>
-            <quantityElement>
-                <epcClass>urn:gdst:traceability-solution.com:product:lot:class:0b4e59bb-29ba-4edd-8e51-7e8d1a96dce7.YFT.LOT4444</epcClass>
-                <quantity>2500</quantity>
+                <epcClass>urn:gdst:traceability-solution.com:product:lot:class:0b4e59bb-29ba-4edd-8e51-7e8d1a96dce7.YFT-FILLET.LOT20203015</epcClass>
+                <quantity>5000</quantity>
                 <uom>KGM</uom>
             </quantityElement>
         </quantityList>
@@ -523,16 +642,91 @@ Sometimes after products are harvested they are transferred to other ships befor
             <source type="urn:epcglobal:cbv:sdt:owning_party">urn:gdst:traceability-solution.com:party:0b4e59bb-29ba-4edd-8e51-7e8d1a96dce7</source>
         </sourceList>
 
-        <!-- BUYER: Jimmy's Tender Co. -->
+        <!-- BUYER: Jimmy's Processing Co. -->
         <destinationList>
             <destination type="urn:epcglobal:cbv:sdt:owning_party">urn:gdst:traceability-solution.com:party:0048000.000001</destination>
         </destinationList>
     </extension>
 
+    
+    <gdst:certificationList>
+
+        <!-- Transshipment Authorization -->
+        <cbvmda:certification>
+            <gdst:certificateType>urn:gdst:certType:transshipment_authorization</gdst:certificateType>
+            <cbvmda:certificationStandard>Transshipment Authority</cbvmda:certificationStandard>
+            <cbvmda:certificationAgency>Transshipment Authority</cbvmda:certificationAgency>
+            <cbvmda:certificationValue>TA_123456789</cbvmda:certificationValue>
+            <cbvmda:certificationIdentification>TA_123456789</cbvmda:certificationIdentification>
+        </cbvmda:certification>
+
+        <!-- Chain of Custody -->
+        <cbvmda:certification>
+            <gdst:certificateType>urn:gdst:certType:chain_custody</gdst:certificateType>
+            <cbvmda:certificationStandard>MSC Chain of Custody</cbvmda:certificationStandard>
+            <cbvmda:certificationAgency>MSC</cbvmda:certificationAgency>
+            <cbvmda:certificationValue>MSC_COC_1234567890</cbvmda:certificationValue>
+            <cbvmda:certificationIdentification>MSC_COC_1234567890</cbvmda:certificationIdentification>
+        </cbvmda:certification>
+
+    </gdst:certificationList>
+
     <!-- Bing Fishing Co. -->
     <gdst:productOwner>urn:gdst:traceability-solution.com:party:0b4e59bb-29ba-4edd-8e51-7e8d1a96dce7</gdst:productOwner>
 
-    <!-- Jimmy's Tender Co. -->
+    <!-- Jimmy's Processing Co. -->
+    <cbvmda:informationProvider>urn:gdst:traceability-solution.com:party:0048000.000001</cbvmda:informationProvider>
+</ObjectEvent>
+```
+
+## Offload/Landing Event
+When products are harvested in the wild, an offload event is recorded for the first time that they reach land.
+
+```xml
+<!-- OFFLOADING EVENT -->
+<ObjectEvent>
+    <eventTime>2020-01-27T18:00:00Z</eventTime>
+    <eventTimeZoneOffset>+00:00</eventTimeZoneOffset>
+    <baseExtension>
+        <eventID>CC2BB7E8-0E81-4915-81EB-386BFD15B39C</eventID>
+    </baseExtension>
+    <epcList/>
+    <action>ADD</action>
+    <bizStep>urn:gdst:bizStep:landing</bizStep>
+
+    <!-- Port of San Diego -->
+    <bizLocation>
+        <id>urn:gdst:traceability-solution.com:location:loc:0048000.SDPORT</id>
+    </bizLocation>
+
+    <extension>
+        <quantityList>
+
+            <!-- YELLOW FIN TUNA -->
+            <quantityElement>
+                <epcClass>urn:gdst:traceability-solution.com:product:lot:class:0b4e59bb-29ba-4edd-8e51-7e8d1a96dce7.YFT-FILLET.LOT20203015</epcClass>
+                <quantity>5000.0</quantity>
+                <uom>KGM</uom>
+            </quantityElement>
+        </quantityList>
+    </extension>
+
+    <!-- Landing Authorization -->
+    <!-- This is a just an example Certificate for Transshipment Authorization and does not represnt a real Certificate -->
+    <gdst:certificationList>
+        <cbvmda:certification>
+            <gdst:certificateType>urn:gdst:certType:landing_authorization</gdst:certificateType>
+            <cbvmda:certificationStandard>Landing Authority</cbvmda:certificationStandard>
+            <cbvmda:certificationAgency>Landing Authority</cbvmda:certificationAgency>
+            <cbvmda:certificationValue>LA_123456789</cbvmda:certificationValue>
+            <cbvmda:certificationIdentification>LA_123456789</cbvmda:certificationIdentification>
+        </cbvmda:certification>
+    </gdst:certificationList>
+
+    <!-- Jimmy's Processing Co. -->
+    <gdst:productOwner>urn:gdst:traceability-solution.com:party:0048000.000001</gdst:productOwner>
+
+    <!-- Jimmy's Processing Co. -->
     <cbvmda:informationProvider>urn:gdst:traceability-solution.com:party:0048000.000001</cbvmda:informationProvider>
 </ObjectEvent>
 ```
