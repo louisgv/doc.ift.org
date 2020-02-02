@@ -6,8 +6,8 @@ description: This page will describe the neccesary KDEs for completing a SIMP re
 ## Recommended Additonal EPCIS Attributes
 There are attributes required by SIMP that are not part of the GDST guidance. Here are recommendations on how these attributes could be recorded in EPCIS in order to meet SIMP requirements.
 
-* **IFTP Number** - This can be recorded as an additional attribute either in the Party or Location master data. The recommended CBV attribute is 
-* **Catching Country** - SIMP requires the Catching Country to be recorded. We recommend that 
+* **IFTP Number** - This can be recorded as an additional attribute either in the Party or Location master data. The recommended CBV attribute is "urn:gdst:iftp".
+* **Catching Country** - SIMP requires the Catching Country to be recorded. 
 
 ## Master Data
 In order to not repeat the master data used with each example, I would like to provide the master data used in the examples below. 
@@ -51,6 +51,7 @@ In order to not repeat the master data used with each example, I would like to p
                     <attribute id="unr:epcglobal:cbv:mda#contact"/>
                     <attribute id="urn:epcglobal:cbv:mda#telephone"/>
                     <attribute id="urn:epcglobal:cbv:mda#email"/>
+                    <attribute id="urn:gdst:iftp">1234567890</attribute>
                 </VocabularyElement>
 
                 <!-- Jimmy's Processings Co. -->
@@ -92,6 +93,15 @@ In order to not repeat the master data used with each example, I would like to p
                     <attribute id="urn:epcglobal:cbv:mda#vesselName">Jimmy's Tender Vessel</attribute>
                     <attribute id="urn:epcglobal:cbv:mda#vesselID">IMO.1234567</attribute>
                     <attribute id="urn:epcglobal:cbv:mda#vesselFlagState">US</attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#streetAddressOne">3165 Pacific Hwy</attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#streetAddressTwo"></attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#city">San Diego</attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#state">CA</attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#postalCode">92101</attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#countryCode">US</attribute>
+                    <attribute id="unr:epcglobal:cbv:mda#contact">Joe Smith</attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#telephone">+1.999-999-9999</attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#email">joe@triunionsf.com</attribute>
                 </VocabularyElement>
 
                 <!-- PORT OF San Diego (Owned By: Jimmy's Processings Co.) -->
@@ -127,20 +137,20 @@ In order to fill out a SIMP report for a Wild Harvest scenario we will need the 
 * **Scientific Name** - Pulled from Master Data
 * **Catching Country** - Pulled from the Country of Origin in the ILMD data of the Fishing Event
 * **FAO Zone** - Pulled from the Vessel Catch information in the ILMD data for the Fishing Event
-* **Offload / Landing Date** - Pulled from the Event Time of the Offload Event
+* **Offload / Landing Date** - Pulled from the Event Time of the Offload Event.
 * **Fishing Method** - Pulled from the Vessel Catch information in the ILMD data for the Fishing Event
-* **Product Form** - Pulled from the Master Data
-* **IFTP Number** - ?????
-* **First Receiver Business Name** - Pulled from the Master Data for the BizLocation of the event with the disposition of "entering_commerce"
-* **First Receiver Address** - Pulled from the Master Data for the BizLocation of the event with the disposition of "entering_commerce"
-* **First Receiver Contact Name** - Pulled from the Master Data for the BizLocation of the event with the disposition of "entering_commerce"
-* **First Receiver Contact Email** - Pulled from the Master Data for the BizLocation of the event with the disposition of "entering_commerce"
-* **First Receiver Contact Phone** - Pulled from the Master Data for the BizLocation of the event with the disposition of "entering_commerce"
+* **IFTP Number** - Pulled from the Master Data of the Vessel / Party. In this example we will pull it from the Master Data of the Vessel Owning Party.
+* **First Receiver Business Name** - Pulled from the Master Data for the BizLocation of event with the disposition of "entering_commerce".
+* **First Receiver Address** - Pulled from the Master Data for the BizLocation of event with the disposition of "entering_commerce".
+* **First Receiver Contact Name** - Pulled from the Master Data for the BizLocation of the event with the disposition of "entering_commerce".
+* **First Receiver Contact Email** - Pulled from the Master Data for the BizLocation of the event with the disposition of "entering_commerce".
+* **First Receiver Contact Phone** - Pulled from the Master Data for the BizLocation of the event with the disposition of "entering_commerce".
 * **Product Net Weight** - Pulled from the Net Weight recorded for the Product in the Offload Event
+* **Product Form** - Pulled from the Product Form of the Master Data of the Offloaded product.
 * **Vessel Flag** - Pulled from the Master Data for BizLocation of the Fishing Event or from the Vessel Catch information in the ILMD data of the Fishing Event
 * **Vessel Name** - Pulled from the Master Data for BizLocation of the Fishing Event or from the Vessel Catch information in the ILMD data of the Fishing Event
-* **Transshipment Veesel Country** - Pulled from the Master Data for the BizLocation of the Transshipment Event
-* **Offload Country** - Pulled from the Master Data for the BizLocation of the Offload Event
+* **Transshipment Location Country Code** - Pulled from Read Point geo-coordinates of the Transshipment Event.
+* **Offload Country** - Pulled from the Master Data for the BizLocation of the Offload Event. This attribute is not used in this example because there is a Transshipment that occurs.
 
 This documentation is not meant to serve as a guide for SIMP and is just mean to be an example of converting GDST EPCIS XML into a SIMP Records. For futher documentation on SIMP please see [here](https://www.cbp.gov/sites/default/files/assets/documents/2017-Oct/Implementation%20Guide%20for%20NMFS%20SIM%209-28-17_v2.pdf).
 
@@ -232,6 +242,7 @@ Here is the Example XML for the GDST EPCIS data. This event data will contain a 
     <epcList/>
     <action>ADD</action>
     <bizStep>urn:gdst:bizStep:transshipment</bizStep>
+    <disposition>urn:gdst:disposition:entering_commerce</bizStep>
 
     <!-- Jimmy's Tender -->
     <bizLocation>
@@ -313,8 +324,8 @@ PG01001NMFSIMY
 PG02
 PG05                                                              YFT
 PG06HCFUSPAC                 01272020        TRW  NRD
-PG142NM4<ENTER IFTP NUMBER HERE>
-PG19BY                   Port of San Diego               3165 Pacific Hwy
+PG142NM41234567890
+PG19BY                   Jimmy's Tender Vessel           3165 Pacific Hwy
 PG20                                     San Diego            CA US92101       
 PG21BY Joe Smith              +1.999-999-9999joe@triunionsf.com
 PG31VCRUS                                 KG 10000
@@ -322,11 +333,10 @@ PG31VNMBING Ship
 PG3213 US
 ```
 
-Important Notes:
+**Important Notes:**
 * The FAO Zone 77 is translated into the NMFS Geographic Regin 'PAC'
 * The 'Country of Origin' in the ILMD data for the Fishing Event is not required by GDST (as of V4 document). This is added in order to populate the PG06.CountryCode field because catching country is required.
-* The 'Product Form' on the Product Definition for the Yellow Tuna is translated into the NMFS Processing Description 'NRD' for the PG06.Processing Description field.
-* Right now there is no recommended way for recording an IFTP number for a Party / Vessel. So for now, I have just left this as 'ENTER IFTP NUMBER HERE' in the PGA records.
+* The 'Product Form' on the Product Definition for the Yellow Tuna is translated into the NMFS Processing Description 'NRD' for the PG06.Processing Description field.W
 * The PG32.CountryCode is supposed the be territorial waters where the Transshipment took place. This can be deduced by taking the GDST Transshipment Location At-Sea Geo Coordinates and translating those into the Territorial Water. 
 
 
