@@ -57,7 +57,7 @@ In order to not repeat the master data used with each example, I would like to p
                 <!-- Jimmy's Processings Co. -->
                 <VocabularyElement id="urn:gdst:traceability-solution.com:party:0048000.000001">
                     <attribute id="urn:epcglobal:cbv:mda#informationProvider">urn:gdst:traceability-solution.com:party:0048000.000001</attribute>
-                    <attribute id="urn:epcglobal:cbv:mda#name">Jimmy's Tender Co.</attribute>
+                    <attribute id="urn:epcglobal:cbv:mda#name">Jimmy's Processings Co.</attribute>
                     <attribute id="urn:epcglobal:cbv:mda#streetAddressOne"/>
                     <attribute id="urn:epcglobal:cbv:mda#streetAddressTwo"/>
                     <attribute id="urn:epcglobal:cbv:mda#city"/>
@@ -140,7 +140,7 @@ In order to fill out a SIMP report for a Wild Harvest scenario we will need the 
 * **Offload / Landing Date** - Pulled from the Event Time of the Offload Event.
 * **Fishing Method** - Pulled from the Vessel Catch information in the ILMD data for the Fishing Event
 * **IFTP Number** - Pulled from the Master Data of the Vessel / Party. In this example we will pull it from the Master Data of the Vessel Owning Party.
-* **First Receiver Business Name** - Pulled from the Master Data for the BizLocation of event with the disposition of "entering_commerce".
+* **First Receiver Business Name** - Pulled from the Master Data for Owning Party of the BizLocation of event with the disposition of "entering_commerce".
 * **First Receiver Address** - Pulled from the Master Data for the BizLocation of event with the disposition of "entering_commerce".
 * **First Receiver Contact Name** - Pulled from the Master Data for the BizLocation of the event with the disposition of "entering_commerce".
 * **First Receiver Contact Email** - Pulled from the Master Data for the BizLocation of the event with the disposition of "entering_commerce".
@@ -325,7 +325,7 @@ PG02
 PG05                                                              YFT
 PG06HCFUSPAC                 01272020        TRW  NRD
 PG142NM41234567890
-PG19BY                   Jimmy's Tender Vessel           3165 Pacific Hwy
+PG19BY                   Jimmy's Processings Co.         3165 Pacific Hwy
 PG20                                     San Diego            CA US92101       
 PG21BY Joe Smith              +1.999-999-9999joe@triunionsf.com
 PG31VCRUS                                 KG 10000
