@@ -28,6 +28,7 @@ module.exports = {
           ],
           "Regulatory": [
             "regulatory/simp-compliance",
+            "regulatory/simp-wild-harvest",
             "regulatory/eu-catch-cert",
             "regulatory/non-western-regulations",
           ],
