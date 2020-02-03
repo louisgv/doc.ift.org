@@ -3,16 +3,15 @@ title: SIMP Compliance
 description: This page will describe the neccesary KDEs for completing a SIMP report as well as how to convert the EPCIS XML into the SIMP PGA Records.
 ---
 
+In this scenario we will cover a single Farm with a single Farm Harvest. We will be building a PGA Record based off the Events below. The Master Data for these events can be found above in the Master Data section.
+
 ## Recommended Additonal EPCIS Attributes
 There are attributes required by SIMP that are not part of the GDST guidance. Here are recommendations on how these attributes could be recorded in EPCIS in order to meet SIMP requirements.
 
 * **IFTP Number** - This can be recorded as an additional attribute either in the Party or Location master data. The recommended CBV attribute is "urn:gdst:iftp".
-* **Catching Country** - SIMP requires the Catching Country to be recorded. 
 
 ## Master Data
 In order to not repeat the master data used with each example, I would like to provide the master data used in the examples below. 
-
-**Master Data**
 ```xml
 <!-- MASTER DATA -->
 <EPCISMasterData>
@@ -130,10 +129,17 @@ In order to not repeat the master data used with each example, I would like to p
 </EPCISMasterData>
 ```
 
-## Aggregated Wild Harvest
-This is coming soon.
+## Required KDEs
 
-## Farm Harvest
-
-## Aggregated Farm Harvest
-This is coming soon.
+In order to fill out a SIMP report for a Aquaculture scenario we will need the following KDEs:
+* **Scientific Name** - Pulled from Master Data
+* **Farming Country** - Pulled from the Country of Origin in the ILMD data of the Fishing Event
+* **Harvest Date** - Pulled from the Event Time of the Offload Event.
+* **IFTP Number** - Pulled from the Master Data of the Vessel / Party. In this example we will pull it from the Master Data of the Vessel Owning Party.
+* **Farm Name** - Pulled from the Master Data for Owning Party of the BizLocation of event with the disposition of "entering_commerce".
+* **Farm Address** - Pulled from the Master Data for the BizLocation of event with the disposition of "entering_commerce".
+* **Farm Contact Name** - Pulled from the Master Data for the BizLocation of the event with the disposition of "entering_commerce".
+* **Farm Contact Email** - Pulled from the Master Data for the BizLocation of the event with the disposition of "entering_commerce".
+* **Farm Contact Phone** - Pulled from the Master Data for the BizLocation of the event with the disposition of "entering_commerce".
+* **Product Net Weight** - Pulled from the Net Weight recorded for the Product in the Offload Event
+* **Product Form** - Pulled from the Product Form of the Master Data of the Offloaded product.that occurs.
