@@ -27,7 +27,7 @@ module.exports = {
             "certification/other-cert"
           ],
           "Regulatory": [
-            "regulatory/simp-compliance",
+            "regulatory/simp-aquaculture",
             "regulatory/eu-catch-cert",
             "regulatory/non-western-regulations",
           ],
