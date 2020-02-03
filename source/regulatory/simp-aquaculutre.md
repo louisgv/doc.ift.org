@@ -1,6 +1,6 @@
 ---
-title: SIMP Compliance
-description: This page will describe the neccesary KDEs for completing a SIMP report as well as how to convert the EPCIS XML into the SIMP PGA Records.
+title: SIMP Aquaculture
+description: This page will describe the neccesary KDEs for completing a SIMP Aquaculture report as well as how to convert the EPCIS XML into the SIMP PGA Records.
 ---
 
 In this scenario we will cover a single Farm with a single Farm Harvest. We will be building a PGA Record based off the Events below. The Master Data for these events can be found above in the Master Data section.
