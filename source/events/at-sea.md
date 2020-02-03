@@ -274,7 +274,7 @@ In this scenario a fishing vessel named **BING Ship** owned by **Bing Fishing Co
             <cbvmda:harvestStartDate>2020-01-27</cbvmda:harvestStartDate>
             <cbvmda:harvestEndDate>2020-01-27</cbvmda:harvestEndDate>
 
-            <!-- CATCH CERTIFICATE (?) -->
+            <!-- CATCH CERTIFICATE -->
             <cbvmda:certificationList>
                 <cbvmda:certification>
                     <gdst:certificateType>urn:gdst:certType:catch_certificate</gdst:certificateType>
