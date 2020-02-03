@@ -518,5 +518,3 @@ This event covers the change of ownership from the Farm to the Processor and the
 
 </TransformationEvent>
 ```
-
-
