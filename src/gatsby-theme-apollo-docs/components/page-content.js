@@ -6,7 +6,6 @@ import useMount from "react-use/lib/useMount"
 import { HEADER_HEIGHT } from "gatsby-theme-apollo-docs/src/utils"
 import { IconEdit } from "@apollo/space-kit/icons/IconEdit"
 import { IconDocument } from "@apollo/space-kit/icons/IconDocument"
-import { IconSchema } from "@apollo/space-kit/icons/IconSchema"
 import { PageNav, breakpoints, colors } from "gatsby-theme-apollo-core"
 import { IconComment } from "@apollo/space-kit/icons/IconComment"
 import { withPrefix } from "gatsby"
@@ -184,13 +183,13 @@ export default function PageContent(props) {
   })
 
   const editLink = (
-    <AsideLink href={props.githubUrl}>
+    <AsideLink href={props.githubUrl.replace('tree', 'edit')}>
       <IconEdit /> Edit on GitHub
     </AsideLink>
   )
 
   const requestLink = (
-    <AsideLink href={props.githubUrl}>
+    <AsideLink href={"https://github.com/louisgv/doc.ift.org/issues/new?assignees=&labels=documentation&template=document.md&title=DOC+%7C+"}>
       <IconDocument /> Request doc on GitHub
     </AsideLink>
   )
@@ -227,11 +226,6 @@ export default function PageContent(props) {
         {editLink}
         {requestLink}
         {discussLink}
-        {props.graphManagerUrl && (
-          <AsideLink href={props.graphManagerUrl}>
-            <IconSchema /> Demo Graph Manager
-          </AsideLink>
-        )}
       </Aside>
     </Wrapper>
   )
@@ -244,7 +238,6 @@ PageContent.propTypes = {
   pages: PropTypes.array.isRequired,
   hash: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  graphManagerUrl: PropTypes.string.isRequired,
   headings: PropTypes.array.isRequired,
   spectrumUrl: PropTypes.string,
 }
