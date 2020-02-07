@@ -24,11 +24,11 @@ module.exports = {
   subtitle: "IFT Documentations",
   description: "A guide to IFT's standards and APIs",
   menuTitle: 'IFT ECOSYSTEM',
-
   segmentApiKey: 'wgrIo8Bul0Ujl8USETG3DB6hONdy4kTg',
   algoliaApiKey: '794d68c6a15fef4147f373433a439119',
   algoliaIndexName: 'iftdocs',
   baseUrl: 'https://louisgv.github.io/doc.ift.org/',
+  contentDir: '/source/',
   twitterHandle: 'IFT',
   spectrumHandle: 'IFT',
   youtubeUrl: 'https://www.youtube.com/user/IFTlive',
