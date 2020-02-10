@@ -15,7 +15,9 @@ We use Github to faciliate the workflow above.
 
 If you editted the documentation following [`method A`](contributions/how-to-work-on-doc/#a-use-the-built-in-github-edit-link), the PR process should be straight forward as Github would automate most of it for you. The only thing you would need to be mindful of is the ticket your PR is solving.
 
-If you followed [`method B`](contributions/how-to-work-on-doc/#b-build-the-documentation-locally), please following the guideline below.
+If you followed [`method B`](contributions/how-to-work-on-doc/#b-build-the-documentation-locally), you are expected to follow [`gitflow`](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) guideline to create local branch and PR to the origin remote.
+
+Below are our general guideline and requirements:
 
 ## For contributor
 

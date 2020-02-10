@@ -26,7 +26,11 @@ This documentation was built using [Gatsby](https://www.gatsbyjs.org/). The core
 + [git](https://git-scm.com/)
 + [nodejs](http://nodejs.org/) 
 
-Please consult the links above in order to install the prerequisites. Then, once you have `git` setup, please clone the repository:
+Please consult the links above in order to install the prerequisites. Prior to cloning (equivalent to downloading) the repository to your machine, it will be helpful to fork the repository:
+
+![github fork](./github-fork.png)
+
+This creates a copy of the documentation where you can make branches to work on your new feature or edits. Then, once you have `git` setup, you can clone the repository with:
 
 ```bash
 # with https
@@ -54,4 +58,4 @@ Then, simply run `npm run dev` to start the documentation server on `localhost:8
 npm run start
 ```
 
-You should now have the full documentation running locally. Please follow [`git-flow`](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) guideline when it comes to making contribution. Happy coding!
+You should now have the full documentation running locally. Please follow [`gitflow`](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) guideline when it comes to making contribution. Happy coding!
