@@ -1,11 +1,9 @@
 ---
 title: Why EPCIS?
+description: Here is page that covers why we chose EPCIS as the interoperable data format standard.
 ---
 
-Duis voluptate nulla ut ea officia ea fugiat et ut ad qui ex cupidatat ad. Incididunt sint deserunt cupidatat exercitation fugiat irure. Cillum incididunt pariatur dolor non laboris pariatur magna id ea. Laborum quis magna eu elit ut ullamco proident laborum sunt labore elit minim dolore incididunt.
+Event based traceability allows for the expression of KDEs in an ever-expanding manner. Original approaches to Traceability involved a bag of KDEs that was passed foward with each product, such as "Harvest Date", "Freeze Date", etc. However, the limitations to this was that a single Harvest Date could be expressed about a product, when in reality this is not usually the case. Usually a batch of seafood products will come from multiple harvests, in the case of popcorn shrimp, you are talking about hundrends of harvests. With the original apprach, solution providers would have to add multiple "Harvest Date" KDEs to the bag of attributes to express each Harvest Date. This same issue came up with other KDEs. With Event Based traceability, this is not a concern, each indiviudal harvest gets a Farm Harvest or Wild Harvest events. Those events are then connected to future products via Comminlging / Transformation events.
 
-Incididunt Lorem ut eu mollit aliquip eiusmod minim commodo dolor ipsum adipisicing dolor deserunt esse. Duis sint nisi anim mollit nulla elit cillum ea ipsum. Occaecat nulla nisi voluptate do non veniam voluptate veniam nostrud.
+EPCIS is by far the most widespread and well-developed approach to event-based traceability available globally.  Especially when dealing with downstream actors such as retailers and their “tier 1” suppliers in Europe and the United States (and increasingly in Asia and elsewhere), the ability to provide traceability data in EPCIS-compatible format is a great advantage for securing market relationships. Due to this GDST decided to take the approach of using EPCIS to express traceability data.
 
-Eu consectetur nulla in ullamco. Occaecat deserunt deserunt id elit eu dolor. Eiusmod esse ea reprehenderit voluptate proident amet quis dolor voluptate minim mollit.
-
-Sint dolor nulla dolor magna do aute. Sit culpa aliqua incididunt excepteur excepteur aliqua occaecat incididunt sint veniam. Id amet in aliquip deserunt consectetur. Cillum proident deserunt dolor dolor officia ex aliqua veniam. Sit fugiat veniam quis amet dolore culpa Lorem pariatur culpa. Sit deserunt et amet excepteur dolor Lorem culpa non.
