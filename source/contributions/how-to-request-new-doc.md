@@ -11,8 +11,9 @@ If you have determined that your request is unique, there are `two` ways for you
 
 ## 1.A. Use the built-in request link
 
-You can submit a new request by simply click on the link that says ``. This link is positioned on the right sidebar for desktop, and at the bottom footer for mobile.
+You can submit a new request by simply click on the link that says `Request doc on Github`. This link is positioned on the right sidebar for desktop, and at the bottom footer for mobile:
 
+![Built-in request link](./built-in-request-doc.png)
 
 ## 1.B. Use github's new issue button
 
