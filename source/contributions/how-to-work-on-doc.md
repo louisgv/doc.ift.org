@@ -30,20 +30,20 @@ Please consult the links above in order to install the prerequisites. Prior to c
 
 ![github fork](./github-fork.png)
 
-This creates a copy of the documentation where you can make branches to work on your new feature or edits. Then, once you have `git` setup, you can clone the repository with:
+This creates a copy of the documentation on github under your username where you can make branches to work on your new feature or edits. Then, once you have `git` setup, you can clone the repository with the following command:
 
 ```bash
 # with https
-git clone https://github.com/louisgv/doc.ift.org.git
+git clone https://github.com/<YOUR_GITHUB_USERNAME>/doc.ift.org.git
 ```
 OR
 
 ```bash
 # with ssh
-git clone git@github.com:louisgv/doc.ift.org.git
+git clone git@github.com:<YOUR_GITHUB_USERNAME>/doc.ift.org.git
 ```
 
-> Alternatively, you can use Github for Desktop to clone on Windows or MacOSX.
+> Alternatively, you can use [Github for Desktop](https://desktop.github.com/) to clone on Windows or MacOSX.
 
 Once cloned, `cd` inside `doc.ift.org` and run `npm i` to install the dependency:
 
