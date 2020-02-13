@@ -1,6 +1,6 @@
 ---
 name: 📖 Document Request
-about: Create a report to help us improve
+about: Let us know what you need
 title: "DOC | "
 labels: documentation
 assignees: ''
