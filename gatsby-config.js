@@ -9,6 +9,22 @@ module.exports = {
     `gatsby-plugin-dark-mode`,
     `gatsby-plugin-offline`,
     {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          'gatsby-remark-autolink-headers',
+          {
+            resolve: 'gatsby-remark-check-links',
+            options: {
+              exceptions: [
+                '/contributions/',
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
       resolve: "gatsby-theme-apollo-docs",
       options: {
         ...themeOptions,

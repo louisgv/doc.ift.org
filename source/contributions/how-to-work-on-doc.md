@@ -16,7 +16,7 @@ You can use GitHub's built-in text editor feature to edit any documentation. Sim
 
 ![Built-in request link](./built-in-edit-doc.png)
 
-Once you have finished editing, simply click `Propose file change`. This will take you to a page where you can see the changes you have made. Click `Create pull request` to open a textbox where you will be asked to describe your change. This `pull request` is discussed in detail [here](/contributions/how-to-submit-work-for-review/). If your change is related to a documentation request, please put the request number in the `Issue resolved` section. If you believe your edit will "completely" solve the request, please put `closes` next to the request number. Else, put only the request number. Example for the first case is as follow:
+Once you have finished editing, simply click `Propose file change`. This will take you to a page where you can see the changes you have made. Click `Create pull request` to open a textbox where you will be asked to describe your change. This `pull request` is discussed in detail [here](./how-to-submit-work-for-review). If your change is related to a documentation request, please put the request number in the `Issue resolved` section. If you believe your edit will "completely" solve the request, please put `closes` next to the request number. Else, put only the request number. Example for the first case is as follow:
 
 ![Close PR](./pr-closes-sample.png)
 
