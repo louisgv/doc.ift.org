@@ -44,6 +44,12 @@ module.exports = {
           "Resources": [
             "resources/index"
           ],
+          "Contributions": [
+            "contributions/how-to-work-on-doc",
+            "contributions/how-to-request-new-doc",
+            "contributions/how-to-submit-work-for-review",
+            "contributions/authors"
+          ]
         },
       },
     },
